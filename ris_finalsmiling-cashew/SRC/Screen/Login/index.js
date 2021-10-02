@@ -16,6 +16,8 @@ import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Slider } from 'react-native-elements';
 import { Icon } from 'react-native-elements';
+import {Picker} from '@react-native-picker/picker';
+
 
 const Stack = createStackNavigator();
 
@@ -36,12 +38,7 @@ export default function Login({ navigation }) {
   const [peso, setpeso] = React.useState('');
   const [altura, setAltura] = React.useState('');
   const [idade, setIdade] = React.useState('');
-
-
-
-
-
-
+  const[valueSelect , setValueSelect] = React.useState('');
 
 
 
@@ -121,10 +118,6 @@ export default function Login({ navigation }) {
           </TouchableOpacity>
           
           </View>
-
-          
-          
-
           
           {/* -------------------------------BUTÕES------------------------- */}
           <TouchableOpacity style={styles.butao} onPress={logandoTelaPrincipal}>
@@ -156,10 +149,6 @@ export default function Login({ navigation }) {
       <Modalize ref={modalizeRef}
       snapPoint={450}>
       <LinearGradient colors={['#00BFFF', '#fff']}>
-      
-
-      
-
       <View>
 
       <Text style={{ marginLeft: 10 }}> Nome Completo: </Text>
@@ -240,10 +229,17 @@ export default function Login({ navigation }) {
             }}
           />
 
+          <Text style={{ marginLeft: 20, fontSize:20}}>Sexo:</Text>
 
-
-
-
+          <Picker
+        style={styles.input}
+        selectedValue={valueSelect}
+        onValueChange={(itemValue, itemIndex) =>
+          setValueSelect(itemValue)
+        }>
+        <Picker.Item label="Masculino" value="Masculino" />
+        <Picker.Item label="Feminino" value="Feminino" />
+      </Picker>
 
       <Text style={{ marginLeft: 10, marginTop:10 }}> Senha: </Text>
           <TextInput
@@ -257,48 +253,11 @@ export default function Login({ navigation }) {
           value={confirmacaoDeSenha} />
       </View>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
       <TouchableOpacity style={styles.button}
         onPress={logando}>
           <Text style={{color:"#fff"}}>Procesguir</Text>
         </TouchableOpacity>
-
-  
-
       </LinearGradient>
-
-      
-      
       </Modalize>
     </View>
   );

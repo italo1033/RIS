@@ -10,9 +10,9 @@ import {
   SafeAreaView,
   Image,
   Button,
-  CheckBox
 } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
+import { CheckBox } from 'react-native-elements'
 
 
 export default function Comorbidades({ navigation, route }) {
@@ -20,6 +20,10 @@ export default function Comorbidades({ navigation, route }) {
   const [diabetes1, setDiabetes1] = useState(false);  //checkBox do não sabe
   const [diabetes2, setDiabetes2] = useState(false);//checkBox de não ter material
   const [hipertencao, setHipertencao] = useState(false);//checkBox de não ter farrementas
+  const [Anemia, setAnemia] = useState(false);//checkBox de não ter farrementas
+  const [AIDs, setAIDs] = useState(false);//checkBox de não ter farrementas[
+  const [Cancer, setCancer] = useState(false);//checkBox de não ter farrementas
+  const [Cardiopatia, setCardiopatia] = useState(false);//checkBox de não ter farrementas
 
 
   
@@ -52,42 +56,99 @@ export default function Comorbidades({ navigation, route }) {
 
       {/*--------------------------------- CheckBox  --------------------------------  */}
       <View style={styles.checkboxconatinerGeral}>
-      
-      <View style={styles.checkboxContainer}>
+
 
         <CheckBox
           value={diabetes1}
           onValueChange={setDiabetes1}
           style={styles.checkbox}
           tintColors={{ true: '#5EBF2D', }}
+          title="Diabetes Tipo I"
+          checked={diabetes1}
+          onPress={() => setDiabetes1({checked: !diabetes1})}
         />
-        <Text style={styles.labelText}>Diabetes Tipo I.</Text>
-      </View>
+  
 
-
-      <View style={styles.checkboxContainer}>
         <CheckBox
           value={diabetes2}
           onValueChange={setDiabetes2}
+          title="Diabetes Tipo II"
           style={styles.checkbox}
           tintColors={{ true: '#5EBF2D', }}
+          checked={diabetes2}
+          onPress={() => setDiabetes2({checked: !diabetes2})}
 
         />
-        <Text style={styles.labelText}>Diabetes Tipo II</Text>
-      </View>
 
-
-
-      <View style={styles.checkboxContainer}>
         <CheckBox
 
           value={hipertencao}
           onValueChange={setHipertencao}
           style={styles.checkbox}
           tintColors={{ true: '#5EBF2D', }}
+          title="Hipertenção"
+          checked={hipertencao}
+          onPress={() => setHipertencao({checked: !hipertencao})}
         />
-        <Text style={styles.labelText}>Hipertenção</Text>
-      </View>
+
+        <CheckBox
+
+          value={Anemia}
+          onValueChange={setAnemia}
+          style={styles.checkbox}
+          tintColors={{ true: '#5EBF2D', }}
+          title="Anemia"
+          checked={Anemia}
+          onPress={() => setAnemia({checked: !Anemia})}
+        />
+
+
+        <CheckBox
+
+          value={Cancer}
+          onValueChange={setCancer}
+          style={styles.checkbox}
+          tintColors={{ true: '#5EBF2D', }}
+          title="Câncer"
+          checked={Cancer}
+          onPress={() => setCancer({checked: !Cancer})}
+
+        />
+
+        <CheckBox
+
+          value={Cardiopatia}
+          onValueChange={setCardiopatia}
+          style={styles.checkbox}
+          tintColors={{ true: '#5EBF2D', }}
+          title="Cardiopatia"
+          checked={Cardiopatia}
+          onPress={() => setCardiopatia({checked: !Cardiopatia})}
+        />
+
+
+        <CheckBox
+
+          value={AIDs}
+          onValueChange={setAIDs}
+          style={styles.checkbox}
+          tintColors={{ true: '#5EBF2D', }}
+          title="AIDs"
+          checked={AIDs}
+          onPress={() => setAIDs({checked: !AIDs})}
+        />
+
+
+
+
+
+
+      
+
+
+
+
+
 
       </View>
 
@@ -100,7 +161,7 @@ export default function Comorbidades({ navigation, route }) {
           style={styles.input}
           onChangeText={onChangeText}
           multiline
-          placeholder="Digite aqui outro motivo"
+          placeholder="Digite aqui outro Comorbidade"
           value={text} />
       </View>
 

@@ -4,6 +4,7 @@ export const styles = StyleSheet.create({
 container: {
     backgroundColor:"#fff",
     paddingTop:50,
+    alignItems:"center",
     flex: 1,
   },
 
@@ -12,18 +13,14 @@ container: {
   //---------------------styles  do checkeBox------------------------------------------
 
   checkboxconatinerGeral: { 
-    marginLeft:90
+    justifyContent:"center",
+
+    
 
   },
-  checkboxContainer: {
-    flexDirection: "row",
-    marginBottom: 20,
-    
-  },
   checkbox: {
-    alignSelf: "center",
-    marginLeft:5,
-    tintColor:"#00BFFF"
+    tintColor:"#00BFFF",
+    backgroundColor:"red",
     
   },
   labelText: {
@@ -36,6 +33,7 @@ container: {
     button:{
     height: 40,
     margin: 12,
+    width:290,
     backgroundColor: "#00BFFF",
     alignItems: 'center',
     paddingTop:10,

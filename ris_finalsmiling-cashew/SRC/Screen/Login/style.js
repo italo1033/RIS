@@ -11,15 +11,15 @@ export const styles = StyleSheet.create({
       backgroundColor: "#00BFFF"
     },
     SubfundoBranco:{
-      marginTop:40,
       backgroundColor:'#fff',
+      marginTop:-100,
       width:280,
       borderTopLeftRadius:5,
       borderTopRightRadius:25,
       borderBottomLeftRadius:25,
       borderBottomRightRadius:5,
       justifyContent:"center",
-      marginBottom:20
+
       
     },
 
@@ -60,10 +60,11 @@ export const styles = StyleSheet.create({
   },
 //-----------------------------------------------IMAGEM E ICONES ---------------------------------------------------
   imageQRCODE:{
-    marginTop:20,
-    height:120,
-    width:120
+    marginTop:-30,
+    height:350,
+    width:200,
   },
+
 
 
 
